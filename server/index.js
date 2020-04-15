@@ -5,15 +5,24 @@ const path = require('path');
 const bodyParser = require('body-parser');
 const routes = require('./routes/routes');
 const configs = require('./config');
-
+const ProductService = require('./services/ProductService');
+const TestimonialService = require('./services/TestimonialService');
 // PLACES EXPRESS INTO APP VARIABLE
 const app = express();
 // SETS PORT VARIABLE TO 3000
 const port = 3000;
+const productService = new ProductService(config.data.products);
+const testimonialService = new TestimonialService(config.data.testimonials);
 // CREATE ROUTES FOR EVERYTHING IN THE PUBLIC FOLDER
 app.use(express.static('public'));
 
-app.use('/', routes());
+app.use(
+  '/',
+  routes({
+    productService: productService,
+    testimonialService: testimonialService,
+  })
+);
 // SETS THE RENDER ENGINE TO EJS
 app.set('view-engine', 'ejs');
 // STORES THE ENVIRONMENT FROM CONFIG.JS IN CONFIGS VARIABLE
