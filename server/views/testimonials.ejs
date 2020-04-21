@@ -1,0 +1,90 @@
+<%# /Import the header %>
+<%- include('templates/header'); -%>
+<div class="section section-padding">
+    <div class="container">
+        <h2 class="is-size-3 has-text-centered">Recent Testimonials</h2>
+        <%# Testimonial Loop %>
+        <% testimonialList.forEach(function(item) { %>
+        <div class="column">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-header-title has-text-centered is-size-4 is-italic is-centered">
+                        <%= item.title %>
+                    </div>
+                </div>
+
+                <div class="card-content is-size-5"><%= item.message %></div>
+                <div class="card-footer">
+                    <div class="card-footer-item is-size-6 is-italic">- <%= item.name %></div>
+                </div>
+            </div>
+        </div>
+        <%  }); %>
+    </div>
+</div>
+<div class="section section-padding">
+    <div class="container">
+        <h1 class="is-size-3 has-text-centered">Submit Your Own Testimonial</h1>
+        <%# Testimonial Form %>
+        <div class="columns is-centered">
+            <div class="column is-four-fifths">
+                <form class="form" action="/testimonials" method="POST">
+                    <div class="field is-horizontal">
+                        <div class="field-label">
+                            <div class="label" for="testimonial-form-name">Name</div>
+                        </div>
+                        <div class="field-body">
+                            <div class="field">
+                                <div class="control is-expanded">
+                                    <input class="input" id="testimonial-form-name" type="text"
+                                        placeholder="Enter your name" name="tmName">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="field is-horizontal">
+                        <div class="field-label is-normal">
+                            <div class="label" for="testimonial-form-title">Title</div>
+                        </div>
+                        <div class="field-body">
+                            <div class="field">
+                                <div class="control is-expanded">
+                                    <input class="input" id="testimonial-form-title" type="text"
+                                        placeholder="Title of your testimonial" name="tmTitle">
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="field is-horizontal">
+                        <div class="field-label">
+                            <label class="label" for="testimonial-form-message">Message</label>
+                        </div>
+                        <div class="field-body">
+                            <div class="field">
+                                <div class="control">
+                                    <textarea class="textarea" id="testimonial-form-message" type="text"
+                                        placeholder="Enter your message, then hit the submit" rows="6"
+                                        name="tmMessage"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="field is-horizontal">
+                        <div class="field-label">
+                        </div>
+                        <div class="field-body">
+                            <div class="field">
+                                <div class="control">
+                                    <button class="button is-link is-fullwidth" type="submit">Submit</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<%# Import the footer %>
+<%- include('templates/footer'); -%>

@@ -1,0 +1,8 @@
+.products-style {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+.products-padding {
+  padding: 2rem;
+}
