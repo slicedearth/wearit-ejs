@@ -11,10 +11,30 @@ const TestimonialService = require('./services/TestimonialService');
 const app = express();
 // SETS PORT VARIABLE TO 3000
 const port = 3000;
+// STORES THE ENVIRONMENT FROM CONFIG.JS IN CONFIGS VARIABLE
+const config = configs[app.get('env')];
 const productService = new ProductService(config.data.products);
 const testimonialService = new TestimonialService(config.data.testimonials);
 // CREATE ROUTES FOR EVERYTHING IN THE PUBLIC FOLDER
 app.use(express.static('public'));
+app.use(bodyParser.urlencoded({ extended: true }));
+// SETS THE RENDER ENGINE TO EJS
+app.set('view engine', 'ejs');
+// ADDS WHITESPACE TO HTML IF IN DEVELOPMENT ENVIRONMENT
+if (app.get('env') === 'development') {
+  app.locals.pretty = true;
+}
+app.set('views', path.join(__dirname, './views'));
+//GETS THE CATEGORY NAMES FOR THE DROPDOWN MENU
+app.use(async (req, res, next) => {
+  try {
+    const categories = await productService.getCategories();
+    res.locals.productCategories = categories;
+    return next();
+  } catch (err) {
+    return next(err);
+  }
+});
 
 app.use(
   '/',
@@ -23,16 +43,7 @@ app.use(
     testimonialService: testimonialService,
   })
 );
-// SETS THE RENDER ENGINE TO EJS
-app.set('view-engine', 'ejs');
-// STORES THE ENVIRONMENT FROM CONFIG.JS IN CONFIGS VARIABLE
-const config = configs[app.get('env')];
-// ADDS WHITESPACE TO HTML IF IN DEVELOPMENT ENVIRONMENT
-if (app.get('env') === 'development') {
-  app.locals.pretty = true;
-}
-app.set('views', path.join(__dirname, './views'));
-app.use(bodyParser.urlencoded({ extended: true }));
+
 // HTTP-ERRORS MIDDLEWARE
 app.use((req, res, next) => {
   return next(httpErrors(404, 'File Not Found'));
@@ -41,9 +52,9 @@ app.use((err, req, res, next) => {
   res.locals.message = err.message;
   const status = err.status || 500;
   res.locals.status = status;
-  res.locals.err = app.get('env') === 'development' ? err : {};
+  res.locals.error = app.get('env') === 'development' ? err : {};
   res.status(status);
-  res.send(err);
+  return res.render('error');
 });
 // STARTS SERVER
 app.listen(port, () => console.log(`Server started on port ${port}!`));

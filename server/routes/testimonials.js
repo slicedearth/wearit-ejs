@@ -16,7 +16,7 @@ module.exports = (param) => {
     }
   });
 
-  router.post('/', async (req, res) => {
+  router.post('/', async (req, res, next) => {
     const testimonialList = await testimonialService.getList();
     try {
       const tmName = req.body.tmName.trim();
