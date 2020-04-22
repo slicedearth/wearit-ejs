@@ -1,7 +1,7 @@
 const express = require('express');
-const testRoute = require('./testRoute');
-const productsRoute = require('./products');
-const testimonialsRoute = require('./testimonials');
+// const testRoute = require('./testRoute');
+const productsRoutes = require('./products');
+const testimonialsRoutes = require('./testimonials');
 // const staffRoute = require('./staff');
 const router = express.Router();
 
@@ -17,8 +17,8 @@ module.exports = (param) => {
     });
   });
   // router.use('./aboutus', staffRoute(param));
-  router.use('/test', testRoute());
-  router.use('/products', productsRoute(param));
-  router.use('/testimonials', testimonialsRoute(param));
+  // router.use('/test', testRoute());
+  router.use('/products', productsRoutes(param));
+  router.use('/testimonials', testimonialsRoutes(param));
   return router;
 };

@@ -1,10 +1,16 @@
 <%- include('templates/header'); -%>
-<div class="section section-padding">
-    <div class="container">
-        <h1><%= status %></h1>
-        <p><%= error %></p>
-    </div>
 
-</div>
+<section class="hero error-background is-fullheight">
+    <div class="hero-body">
+        <div class="container">
+            <h1 class="title is-size-1 has-text-weight-bold has-text-centered">
+                <%= status %>
+            </h1>
+            <h2 class="subtitle is-size-2 has-text-weight-semibold has-text-centered">
+                <%= error %>
+            </h2>
+        </div>
+    </div>
+</section>
 
 <%- include('templates/footer'); -%>

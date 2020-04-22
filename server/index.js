@@ -52,9 +52,12 @@ app.use((err, req, res, next) => {
   res.locals.message = err.message;
   const status = err.status || 500;
   res.locals.status = status;
-  res.locals.error = app.get('env') === 'development' ? err : {};
+  res.locals.error = req.app.get('env') === 'development' ? err : {};
   res.status(status);
-  return res.render('error');
+  return res.render('error', {
+    page: 'Error',
+  });
 });
 // STARTS SERVER
 app.listen(port, () => console.log(`Server started on port ${port}!`));
+module.export = app;
