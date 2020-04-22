@@ -1,0 +1,22 @@
+<%- include('templates/header'); -%>
+<div class="container">
+    <h1 class="is-size-3 has-text-centered has-text-weight-semibold has-text-primary">Headwear</h1>
+    <div class="products-style">
+        <% productsList.forEach(function(item) { %>
+        <div class="card products-padding">
+            <a href="/products/<%= item.shortCat %>/<%= item.shortname %>">
+                <p class="has-text-centered  is-size-4"><%= item.name %></p>
+            </a>
+            <div class="card-image">
+                <figure class="image is-4by3">
+                    <a href="/products/<%= item.shortCat %>/<%= item.shortname %>"><img src="/images/<%= item.image  %>"
+                            alt="<%= item.name  %>">
+                    </a>
+
+                </figure>
+            </div>
+        </div>
+        <% }) %>
+    </div>
+</div>
+<%- include('templates/footer'); -%>
