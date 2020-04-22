@@ -2,18 +2,19 @@
 <html lang="en">
 
 <head>
+    <title>WearIt --<%= page %></title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.2/css/bulma.min.css">
-    <link rel='stylesheet' href='/css/style.css' />
-    <title>Shop--</title>
+    <link rel="stylesheet" id="bulmaStyle" href="/css/bulmaswatch-flatly.min.css">
+    <link rel='stylesheet' id="customStyle" href='/css/style.css' />
+
 </head>
 
 <body>
     <nav class="navbar is-transparent" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
             <a class="navbar-item has-text-primary is-size-2 has-text-weight-semibold is-italic" href="/">
-                Bulma Site
+                WearIt
             </a>
 
             <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
@@ -51,6 +52,18 @@
                 <a class="navbar-item" href="/aboutus">
                     About Us
                 </a>
+                <div class="navbar-item">
+                    <div class="buttons">
+                        <a id="dark-button" class="button is-primary"
+                            onclick="swapStyles('/css/bulmaswatch-darkly.min.css', '/css/alt-style.css')">
+                            <strong>Dark</strong>
+                        </a>
+                        <a id="light-button" class="button is-light"
+                            onclick="swapStyles('/css/bulmaswatch-flatly.min.css', '/css/style.css')">
+                            Light
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     </nav>
