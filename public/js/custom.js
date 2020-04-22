@@ -21,3 +21,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
+// Dark Mode (Swap Style Sheets)
+function swapStyles(bulmaSheet, customSheet) {
+  document.getElementById('bulmaStyle').setAttribute('href', bulmaSheet);
+  document.getElementById('customStyle').setAttribute('href', customSheet);
+}
