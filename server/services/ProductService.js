@@ -11,17 +11,17 @@ class ProductService {
     if (!data) {
       return [];
     }
-    return JSON.parse(data).products;
+    return JSON.parse(data);
   }
   async getCategories() {
     const data = await this.getData();
-    return data.map((product) => {
-      return { category: product.category, shortCat: product.shortCat };
-    });
+    // console.log(data);
+    return data.categories;
   }
   async getList() {
     const data = await this.getData();
-    return data.map((product) => {
+    // console.log(data);
+    return data.products.map((product) => {
       return {
         name: product.name,
         shortname: product.shortname,
@@ -34,7 +34,7 @@ class ProductService {
   }
   async getProduct(shortname) {
     const data = await this.getData();
-    const product = data.find((product) => {
+    const product = data.products.find((product) => {
       return product.shortname === shortname;
     });
     if (!product) {
@@ -47,6 +47,25 @@ class ProductService {
         shortCat: product.shortCat,
         description: product.description,
         image: product.image,
+      };
+    }
+  }
+  async getProductCategory(category) {
+    const data = await this.getData();
+    const productCategory = data.products.filter((productCategory) => {
+      return productCategory.category === category;
+    });
+
+    if (!productCategory) {
+      return null;
+    } else {
+      return {
+        name: productCategory.name,
+        shortname: productCategory.shortname,
+        category: productCategory.category,
+        shortCat: productCategory.shortCat,
+        description: productCategory.description,
+        image: productCategory.image,
       };
     }
   }

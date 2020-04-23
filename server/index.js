@@ -29,6 +29,7 @@ app.set('views', path.join(__dirname, './views'));
 app.use(async (req, res, next) => {
   try {
     const categories = await productService.getCategories();
+    // console.log(categories);
     res.locals.productCategories = categories;
     return next();
   } catch (err) {
@@ -45,19 +46,19 @@ app.use(
 );
 
 // HTTP-ERRORS MIDDLEWARE
-app.use((req, res, next) => {
-  return next(httpErrors(404, 'File Not Found'));
-});
-app.use((err, req, res, next) => {
-  res.locals.message = err.message;
-  const status = err.status || 500;
-  res.locals.status = status;
-  res.locals.error = req.app.get('env') === 'development' ? err : {};
-  res.status(status);
-  return res.render('error', {
-    page: 'Error',
-  });
-});
+// app.use((req, res, next) => {
+//   return next(httpErrors(404, 'File Not Found'));
+// });
+// app.use((err, req, res, next) => {
+//   res.locals.message = err.message;
+//   const status = err.status || 500;
+//   res.locals.status = status;
+//   res.locals.error = req.app.get('env') === 'development' ? err : {};
+//   res.status(status);
+//   return res.render('error', {
+//     page: 'Error',
+//   });
+// });
 // STARTS SERVER
 app.listen(port, () => console.log(`Server started on port ${port}!`));
 module.export = app;

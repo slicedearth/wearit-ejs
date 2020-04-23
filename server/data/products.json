@@ -1,4 +1,5 @@
 {
+  "categories": ["Clothing", "Headwear", "Footwear"],
   "products": [
     {
       "name": "T-Shirt",

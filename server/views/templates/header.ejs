@@ -39,9 +39,9 @@
                         <a class="navbar-item" href="/products">
                             All Products
                         </a>
-                        <% productCategories.forEach(function(item) { %>
-                        <a class="navbar-item" href="/products/<%= item.shortCat %>">
-                            <%= item.category %>
+                        <% productCategories.forEach(function(categories) { %>
+                        <a class="navbar-item" href="/products/<%= categories %>">
+                            <%= categories %>
                         </a>
                         <% }); %>
                     </div>

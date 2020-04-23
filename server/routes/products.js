@@ -13,7 +13,7 @@ module.exports = (param) => {
   });
   router.get('/:category', async (req, res, next) => {
     try {
-      const productsList = await productService.getList();
+      const productsList = await productService.getProductCategory();
       const promises = [];
       promises.push(productsList);
       promises.push(productService.getList(req.params.name));
@@ -32,6 +32,28 @@ module.exports = (param) => {
       return next(err);
     }
   });
+  // router.get('/:category', async (req, res, next) => {
+  //   try {
+  //     const productCategoryList = await productService.getProductCategory();
+  //     const promises = [];
+  //     promises.push(productCategoryList);
+  //     promises.push(productService.getList(req.params.name));
+  //     promises.push(productService.getCategories(req.params.category));
+  //     const result = await Promise.all(promises);
+
+  //     if (!result[0]) {
+  //       return next();
+  //     }
+  //     return res.render(req.params.category, {
+  //       page: req.params.category,
+  //       category: result[0],
+  //       product: result[1],
+  //       productCategoryList,
+  //     });
+  //   } catch (err) {
+  //     return next(err);
+  //   }
+  // });
   router.get('/:category/:name', async (req, res, next) => {
     try {
       const promises = [];
