@@ -3,9 +3,78 @@ const configs = require('../config');
 const config = configs['development'];
 const ps = new ProductService(config.data.products);
 
+test('getProductCategory', async () => {
+  const categoryData = await ps.getProductCategory('Clothing');
+  expect(categoryData.products).toStrictEqual([
+    {
+      name: 'T-Shirt',
+      shortname: 't_shirt',
+      category: 'Clothing',
+      shortCat: 'clothing',
+      description:
+        'Fusce consequat quis velit vitae commodo. Curabitur imperdiet egestas mi, eget eleifend urna varius a. Quisque auctor pellentesque mi a tempor. Nullam efficitur ligula suscipit nisi lacinia, vitae fringilla neque maximus. Vivamus orci dolor, consequat ac neque quis, ullamcorper tristique ligula. Morbi hendrerit metus dui, et ornare orci faucibus et. Aliquam elementum congue purus vitae dapibus. Nunc vel venenatis nibh, id vehicula libero. Sed scelerisque eu neque et dictum. Nam placerat ante ut commodo lacinia. Etiam et enim vel dolor pulvinar dignissim eu at leo. Praesent eu orci eu leo fermentum fermentum. Aenean convallis nibh arcu, vel tempus felis lobortis non. Sed non porttitor velit, quis gravida justo. Phasellus vitae sem mi. Aenean ut neque sed elit consectetur auctor.',
+      image: 'tshirt.jpg',
+    },
+    {
+      name: 'Jacket',
+      shortname: 'jacket',
+      category: 'Clothing',
+      shortCat: 'clothing',
+      description:
+        'Nulla ac tortor gravida, sodales orci eget, tristique sem. Praesent commodo sem quis sollicitudin feugiat. Vivamus nulla nisi, pharetra nec viverra sit amet, imperdiet eget felis. Mauris a sapien ut magna pulvinar semper at quis odio. Mauris quis nisi vel orci congue venenatis. Praesent scelerisque elit sem, ut laoreet nibh placerat sagittis. Integer malesuada, mi at aliquet pulvinar, dui tortor venenatis velit, ac consequat sapien turpis sit amet nulla. Nulla eget augue feugiat, scelerisque libero a, mollis sem. Vivamus ultricies posuere est, eget ultrices enim vestibulum vestibulum. Morbi consectetur, ante et lacinia porta, lectus sapien sollicitudin tellus, at sollicitudin odio mauris ornare odio.',
+      image: 'jacket.jpg',
+    },
+    {
+      name: 'Dress',
+      shortname: 'dress',
+      category: 'Clothing',
+      shortCat: 'clothing',
+      description:
+        'Maecenas vel pellentesque nisi, fermentum molestie sapien. Mauris at orci ut arcu ultrices vehicula. Morbi rhoncus leo at est rhoncus, a placerat nibh volutpat. Donec dapibus sodales purus, vitae commodo odio gravida in. Nullam ex mauris, imperdiet fermentum scelerisque at, varius quis mi. Suspendisse in nunc convallis velit facilisis dictum. Ut cursus in risus ac facilisis. Quisque cursus venenatis est. Nam ultrices eros nec elit condimentum vehicula. Cras aliquet ac nibh in pharetra. Fusce id nisi consequat, eleifend elit eu, tincidunt mi. Morbi at interdum magna. Morbi nec ex elit. Etiam vulputate vel purus sit amet blandit. Donec in sagittis enim, a interdum lorem.',
+      image: 'dress.jpg',
+    },
+    {
+      name: 'Cargo Pants',
+      shortname: 'cargo_pants',
+      category: 'Clothing',
+      shortCat: 'clothing',
+      description:
+        'Duis ac viverra dolor. Aenean porta velit pharetra enim lacinia, a euismod mi bibendum. Integer nec rhoncus risus. Proin interdum viverra metus eu vestibulum. Sed non urna eget erat eleifend rhoncus vitae sed massa. Interdum et malesuada fames ac ante ipsum primis in faucibus. In et ornare magna. Vestibulum sit amet quam urna. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. In ut sodales enim. Pellentesque sodales libero ut dictum ornare. Ut rutrum augue in leo consectetur, vitae aliquam eros bibendum. Fusce non pretium nunc. Aenean ut est eget nunc molestie tristique.',
+      image: 'cargopants.jpg',
+    },
+    {
+      name: 'Jeans',
+      shortname: 'jeans',
+      category: 'Clothing',
+      shortCat: 'clothing',
+      description:
+        'Ut mattis purus eros, id dignissim nunc hendrerit ut. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Cras ut lacinia elit. Donec urna tellus, facilisis eu luctus at, tincidunt vitae ligula. Vivamus congue massa tellus. Vestibulum mollis sem ac ex porta cursus. Nam interdum nisl a ligula dictum, ut feugiat lectus convallis. Vivamus id cursus ex. Suspendisse potenti. Nam libero ligula, scelerisque eget massa vel, interdum placerat leo. Nulla accumsan at sem ut fermentum. Proin ultrices massa vitae nunc eleifend efficitur. Nullam laoreet rhoncus neque, ac tempor neque commodo quis.',
+      image: 'jeans.jpg',
+    },
+    {
+      name: 'Jumper',
+      shortname: 'jumper',
+      category: 'Clothing',
+      shortCat: 'clothing',
+      description:
+        'Suspendisse maximus, eros non viverra consectetur, ligula arcu fermentum odio, nec vulputate nibh diam ac arcu. In hac habitasse platea dictumst. Duis tempus turpis eget tortor dignissim dapibus. Suspendisse pellentesque vitae mi vel ornare. Vestibulum sit amet dolor vehicula purus gravida lobortis. Morbi ut dapibus elit. Proin tempus nulla massa, eget interdum tortor condimentum sed. Duis dapibus pretium suscipit. Nam nunc ligula, laoreet sed faucibus eget, eleifend eu ante. Vestibulum a libero varius, viverra turpis eget, lacinia velit. Praesent vitae lectus neque. Quisque tellus mauris, volutpat quis turpis et, scelerisque viverra eros. Nam sollicitudin libero et commodo facilisis. Aenean molestie eget tortor in eleifend. Fusce euismod nibh dolor, eu ullamcorper quam tristique vel.',
+      image: 'jumper.jpg',
+    },
+    {
+      name: 'Skirt',
+      shortname: 'skirt',
+      category: 'Clothing',
+      shortCat: 'clothing',
+      description:
+        'Curabitur eget cursus purus. Aliquam pharetra maximus est, in rutrum tellus consequat nec. Proin hendrerit placerat felis in ultricies. Cras nec est at leo consectetur feugiat vel eu erat. Mauris risus enim, suscipit sed dignissim et, pulvinar et nulla. Aenean vestibulum lectus vitae blandit porta. Maecenas rutrum vitae risus vel suscipit. Vivamus ac ullamcorper diam. Quisque faucibus vulputate nisl, porttitor efficitur mi fringilla vitae. Sed ut imperdiet est.',
+      image: 'skirt.jpg',
+    },
+  ]);
+});
+
 test('Test of the ProductService getData() function to ensure that the correct product data is being passed through.', async () => {
   const data = await ps.getData();
-  expect(data).toStrictEqual([
+  expect(data.products).toStrictEqual([
     {
       name: 'T-Shirt',
       shortname: 't_shirt',
@@ -141,5 +210,10 @@ test('Test of the ProductService getData() function to ensure that the correct p
       image: 'slippers.jpg',
     },
   ]);
-  console.log(data);
+  // console.log(data.products);
+});
+test('Test of the ProductService getData() function to ensure that the correct category data is being passed through.', async () => {
+  const data = await ps.getData();
+  expect(data.categories).toStrictEqual(['Clothing', 'Headwear', 'Footwear']);
+  // console.log(data.categories);
 });
