@@ -5,6 +5,7 @@ module.exports = {
     data: {
       products: (path.join(__dirname), 'server/data/products.json'),
       testimonials: (path.join(__dirname), 'server/data/testimonials.json'),
+      about: (path.join(__dirname), 'server/data/aboutus.json'),
     },
   },
   production: {
@@ -12,6 +13,7 @@ module.exports = {
     data: {
       products: (path.join(__dirname), 'server/data/products.json'),
       testimonials: (path.join(__dirname), 'server/data/testimonials.json'),
+      about: (path.join(__dirname), 'server/data/aboutus.json'),
     },
   },
 };

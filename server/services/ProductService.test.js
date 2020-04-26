@@ -4,7 +4,7 @@ const config = configs['development'];
 const ps = new ProductService(config.data.products);
 
 test('getProductCategory', async () => {
-  const categoryData = await ps.getProductCategory('Clothing');
+  const categoryData = await ps.getProductCategory('clothing');
   expect(categoryData).toStrictEqual([
     {
       name: 'T-Shirt',
@@ -216,6 +216,6 @@ test('Test of the ProductService getData() function to ensure that the correct p
 });
 test('Test of the ProductService getData() function to ensure that the correct category data is being passed through.', async () => {
   const data = await ps.getData();
-  expect(data.categories).toStrictEqual(['Clothing', 'Headwear', 'Footwear']);
+  expect(data.categories).toStrictEqual(['clothing', 'headwear', 'footwear']);
   // console.log(data.categories);
 });

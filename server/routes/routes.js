@@ -1,9 +1,7 @@
 const express = require('express');
-// const testRoute = require('./testRoute');
 const productsRoutes = require('./products');
 const testimonialsRoutes = require('./testimonials');
-// const staffRoute = require('./staff');
-// const aboutusRoutes = require('./aboutus');
+const aboutRoute = require('./aboutus');
 const router = express.Router();
 
 module.exports = (param) => {
@@ -16,12 +14,11 @@ module.exports = (param) => {
       productsList,
       productCategories,
     });
-    // return res.send('index');
   });
-  // router.use('./aboutus', staffRoute(param));
   router.use;
-  // router.use('/test', testRoute());
   router.use('/products', productsRoutes(param));
   router.use('/testimonials', testimonialsRoutes(param));
+  router.use('/aboutus', aboutRoute(param));
+
   return router;
 };
