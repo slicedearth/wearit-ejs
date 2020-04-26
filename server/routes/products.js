@@ -6,25 +6,27 @@ module.exports = (param) => {
 
   router.get('/', async (req, res, next) => {
     const productsList = await productService.getList();
-    return res.render('allproducts', {
+    return res.render('products', {
       page: 'All Products',
       productsList,
     });
   });
   router.get('/:category', async (req, res, next) => {
     try {
-      // const productsList = await productService.getProductCategory();
-      const promises = [];
-      promises.push(productService.getProductCategory('Clothing'));
+      const productsList = await productService.getProductCategory(
+        req.params.category
+      );
+      // const promises = [];
+      // promises.push(productService.getProductCategory('Clothing'));
       // promises.push(productService.getList(req.params.name));
       // promises.push(productService.getCategories(req.params.category));
-      const result = await Promise.all(promises);
-      if (!result[0]) {
-        return next();
-      }
-      return res.render('clothing', {
-        page: 'clothing',
-        searchArray: result[0],
+      // const result = await Promise.all(promises);
+      // if (!result[0]) {
+      //   return next();
+      // }
+      return res.render('products', {
+        page: req.params.category,
+        productsList,
 
         // product: result[1],
       });
