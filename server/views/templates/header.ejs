@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>WearIt --<%= page %></title>
+    <title>WearIt -- <%= page.charAt(0).toUpperCase()+page.slice(1) %></title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" id="bulmaStyle" href="/css/bulmaswatch-flatly.min.css">
@@ -41,7 +41,7 @@
                         </a>
                         <% productCategories.forEach(function(categories) { %>
                         <a class="navbar-item" href="/products/<%= categories %>">
-                            <%= categories %>
+                            <%= categories.charAt(0).toUpperCase()+categories.slice(1) %>
                         </a>
                         <% }); %>
                     </div>

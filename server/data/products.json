@@ -1,5 +1,5 @@
 {
-  "categories": ["Clothing", "Headwear", "Footwear"],
+  "categories": ["clothing", "headwear", "footwear"],
   "products": [
     {
       "name": "T-Shirt",
@@ -107,6 +107,7 @@
     },
     {
       "name": "Top Hat",
+      "shortname": "top_hat",
       "category": "Headwear",
       "shortCat": "headwear",
       "description": "Sed vel metus rhoncus, hendrerit nulla et, consectetur massa. Nulla vel tempus libero. Morbi aliquet vel enim non finibus. Sed nunc nibh, condimentum et elit quis, semper pharetra quam. Nam efficitur augue et lectus faucibus vestibulum. Fusce ut tincidunt risus, non laoreet leo. Proin lectus tellus, tincidunt non feugiat a, finibus vel est. Nunc enim ex, condimentum ut malesuada tincidunt, imperdiet ut purus. Cras fringilla nisl eget rutrum vulputate. Aliquam malesuada scelerisque turpis eu efficitur.",
@@ -114,7 +115,7 @@
     },
     {
       "name": "Slippers",
-      "shortname": "shorts",
+      "shortname": "slippers",
       "category": "Footwear",
       "shortCat": "footwear",
       "description": "Aenean scelerisque mauris sit amet lacus gravida, id sagittis nunc ornare. Etiam consectetur luctus nunc, sit amet feugiat tortor placerat eget. Vivamus mollis, lectus eu pretium rutrum, dolor lacus dictum purus, ac pretium velit est vitae odio. Praesent sit amet lacus auctor, aliquam elit elementum, facilisis mi. Vestibulum aliquam sapien ac mauris pulvinar, sed imperdiet quam vulputate. Nullam dapibus quam et tempor ornare. Nullam ipsum nunc, venenatis et nisl a, luctus tempor arcu. Cras ultricies arcu et sem elementum, et luctus risus euismod. In in est sagittis metus pellentesque posuere.",

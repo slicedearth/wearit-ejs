@@ -55,7 +55,7 @@ class ProductService {
     const products = data.products;
     const searchArray = products.filter((searchArray) => {
       // console.log(searchArray.category);
-      return searchArray.category === prodCat;
+      return searchArray.shortCat === prodCat;
     });
     // if (!searchArray) {
     //   return null;

@@ -195,6 +195,7 @@ test('Test of the ProductService getData() function to ensure that the correct p
     },
     {
       name: 'Top Hat',
+      shortname: 'top_hat',
       category: 'Headwear',
       shortCat: 'headwear',
       description:
@@ -203,7 +204,7 @@ test('Test of the ProductService getData() function to ensure that the correct p
     },
     {
       name: 'Slippers',
-      shortname: 'shorts',
+      shortname: 'slippers',
       category: 'Footwear',
       shortCat: 'footwear',
       description:
