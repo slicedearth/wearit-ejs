@@ -1,8 +1,14 @@
 [
   {
-    "name": "Craig Bivens",
+    "name": "Stephanie Bivens",
     "jobtitle": "Owner",
     "bio": "Fusce consequat quis velit vitae commodo. Curabitur imperdiet egestas mi, eget eleifend urna varius a. Quisque auctor pellentesque mi a tempor. Nullam efficitur ligula suscipit nisi lacinia, vitae fringilla neque maximus. Vivamus orci dolor, consequat ac neque quis, ullamcorper tristique ligula. Morbi hendrerit metus dui, et ornare orci faucibus et. Aliquam elementum congue purus vitae dapibus. Nunc vel venenatis nibh, id vehicula libero. Sed scelerisque eu neque et dictum. Nam placerat ante ut commodo lacinia. Etiam et enim vel dolor pulvinar dignissim eu at leo. Praesent eu orci eu leo fermentum fermentum. Aenean convallis nibh arcu, vel tempus felis lobortis non. Sed non porttitor velit, quis gravida justo. Phasellus vitae sem mi. Aenean ut neque sed elit consectetur auctor.",
-    "image": "craig.jpg"
+    "image": "owner.jpg"
+  },
+  {
+    "name": "Gary Evans",
+    "jobtitle": "Manager",
+    "bio": "Nam eget rutrum lorem. Curabitur consectetur vel odio pharetra pulvinar. Aenean eget ultrices eros. Nam vel commodo ex. Etiam hendrerit ornare lacus at suscipit. Morbi aliquam augue sollicitudin aliquet rhoncus. Duis non placerat turpis, ac commodo felis. Pellentesque nec libero vel massa tincidunt finibus sed vehicula ligula. Donec dictum urna at nulla semper porttitor. Vivamus sodales risus vel ex rhoncus porttitor. Sed finibus nulla eu enim maximus commodo quis aliquet mauris. Nunc nec hendrerit turpis, quis posuere arcu. Phasellus id rutrum enim, non accumsan lectus.",
+    "image": "manager.jpg"
   }
 ]

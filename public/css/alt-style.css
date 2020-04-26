@@ -3,12 +3,39 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
 }
+@media screen and (max-width: 768px) {
+  .products-style {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .products-style {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+}
+@media screen and (max-width: 768px) {
+  .products-style {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1rem;
+  }
+}
 .products-padding {
   padding: 2rem;
 }
+.home-padding {
+  padding: 3rem;
+}
+.about-padding {
+  padding: 1rem;
+}
 .hero-background {
   background: linear-gradient(rgba(49, 48, 51, 0.8), rgba(49, 48, 51, 0.8)),
-    url('/images/background.jpg') center center;
+    url('/images/site/background.jpg') center center;
   background-size: cover;
   color: white;
   min-height: 50vh;
@@ -18,7 +45,7 @@
 }
 .error-background {
   background: linear-gradient(rgba(95, 8, 8, 0.8), rgba(95, 8, 8, 0.8)),
-    url('/images/error.jpg') center center;
+    url('/images/site/error.jpg') center center;
   background-size: cover;
   color: white;
   min-height: 50vh;
