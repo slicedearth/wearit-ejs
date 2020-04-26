@@ -212,10 +212,10 @@ test('Test of the ProductService getData() function to ensure that the correct p
       image: 'slippers.jpg',
     },
   ]);
-  // console.log(data.products);
+  console.log(data.products);
 });
 test('Test of the ProductService getData() function to ensure that the correct category data is being passed through.', async () => {
   const data = await ps.getData();
   expect(data.categories).toStrictEqual(['clothing', 'headwear', 'footwear']);
-  // console.log(data.categories);
+  console.log(data.categories);
 });
