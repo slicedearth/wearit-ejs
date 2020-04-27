@@ -2,12 +2,15 @@
 <html lang="en">
 
 <head>
-    <title>WearIt -- <%= page.charAt(0).toUpperCase()+page.slice(1) %></title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" id="bulmaStyle" href="/css/bulmaswatch-flatly.min.css">
-    <link rel='stylesheet' id="customStyle" href='/css/style.css' />
-
+    <title>
+        WearIt -- <%= page %>
+    </title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- BULMA CSS -->
+    <link rel="stylesheet" id="bulmaStyle" href="/css/bulmaswatch-flatly.min.css" />
+    <!-- CUSTOM CSS -->
+    <link rel="stylesheet" id="customStyle" href="/css/style.css" />
 </head>
 
 <body>
@@ -53,6 +56,7 @@
                     About Us
                 </a>
                 <div class="navbar-item">
+                    <!-- DARK & LIGHT MODE BUTTONS -- SWAPS STYLE SHEETS -->
                     <div class="buttons">
                         <a id="dark-button" class="button is-dark"
                             onclick="swapStyles('/css/bulmaswatch-darkly.min.css', '/css/alt-style.css')">
@@ -67,3 +71,6 @@
             </div>
         </div>
     </nav>
+</body>
+
+</html>

@@ -1,4 +1,7 @@
 const path = require('path');
+
+// CONFIG FILE -- CONNECTS DATA FILES TO PROJECT AND SETS CONFIGURATION DATA BASED ON ENVIRONMENT
+
 module.exports = {
   development: {
     sitename: 'WearIt [Development]',

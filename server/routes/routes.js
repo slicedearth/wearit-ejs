@@ -6,6 +6,7 @@ const router = express.Router();
 
 module.exports = (param) => {
   const { productService } = param;
+  // GETS HOME PAGE
   router.get('/', async (req, res, next) => {
     const productsList = await productService.getList();
     const productCategories = await productService.getCategories();
@@ -15,7 +16,7 @@ module.exports = (param) => {
       productCategories,
     });
   });
-  router.use;
+
   router.use('/products', productsRoutes(param));
   router.use('/testimonials', testimonialsRoutes(param));
   router.use('/aboutus', aboutRoute(param));

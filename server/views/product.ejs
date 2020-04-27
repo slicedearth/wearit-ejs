@@ -1,19 +1,17 @@
 <%- include('templates/header'); -%>
-<div class="section section-padding">
-    <div class="container-is-fluid">
-        <%# Product Details %>
-        <div class="columns is-centered">
-            <div class="column is-one-quarter">
-                <div>
-                    <h3 class="is-size-2 has-text-centered has-text-primary"><%= product.name %></h3>
-                    <figure class="image is-4by3">
-                        <img src="/images/products/<%= product.image  %>" alt="<%= product.name  %>">
-                    </figure>
-                    <p class="is-size-6">
-                        <%- product.description %>
-                    </p>
-                </div>
-            </div>
+<!-- INDIVIDUAL PRODUCT PAGE -->
+<div class="columns is-centered">
+    <div class="column is-one-third">
+        <div>
+            <%# Product Details %>
+            <h3 class="section is-size-3 has-text-centered has-text-weight-semibold has-text-primary">
+                <%= product.name %></h3>
+            <figure class="image is-4by3">
+                <img src="/images/products/<%= product.image  %>" alt="<%= product.name  %>">
+            </figure>
+            <p class="section is-size-5">
+                <%- product.description %>
+            </p>
         </div>
     </div>
 </div>

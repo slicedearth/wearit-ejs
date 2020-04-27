@@ -6,6 +6,7 @@ class AboutService {
   constructor(datafile) {
     this.datafile = datafile;
   }
+  // ABOUT DATA
   async getData() {
     const data = await readFile(this.datafile, 'utf8');
     if (!data) {
@@ -13,6 +14,7 @@ class AboutService {
     }
     return JSON.parse(data);
   }
+  // ABOUT DATA LIST
   async getList() {
     const data = await this.getData();
     return data;

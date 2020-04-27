@@ -6,6 +6,7 @@ class ProductService {
   constructor(datafile) {
     this.datafile = datafile;
   }
+  //ALL PRODUCT DATA
   async getData() {
     const data = await readFile(this.datafile, 'utf8');
     if (!data) {
@@ -13,14 +14,17 @@ class ProductService {
     }
     return JSON.parse(data);
   }
+  // CATEGORIES DATA
   async getCategories() {
     const data = await this.getData();
-    // console.log(data);
+    // RETURNS ONLY CATEGORIES PROM DATA
     return data.categories;
   }
+
+  // PRODUCT DATA LIST
   async getList() {
     const data = await this.getData();
-    // console.log(data);
+    // MAPS DATA
     return data.products.map((product) => {
       return {
         name: product.name,
@@ -32,8 +36,10 @@ class ProductService {
       };
     });
   }
+  // INDIVIDUAL PRODUCT DATA
   async getProduct(shortname) {
     const data = await this.getData();
+    // FINDS INDIVIDUAL PRODUCT BASED ON SHORTNAME
     const product = data.products.find((product) => {
       return product.shortname === shortname;
     });
@@ -50,28 +56,15 @@ class ProductService {
       };
     }
   }
+  // PRODUCT CATEGORY DATA
   async getProductCategory(prodCat) {
     const data = await this.getData();
     const products = data.products;
+    // FILTERS OUT PRODUCTS THAT FALL UNDER A DIFFERENT CATEGORY THAN THE ONE SELECTED
     const searchArray = products.filter((searchArray) => {
-      // console.log(searchArray.category);
       return searchArray.shortCat === prodCat;
     });
-    // if (!searchArray) {
-    //   return null;
-    // } else {
-    // console.log(searchArray[1].name);
-    // searchArray.forEach((product) => {
-    //   console.log(product.name);
-    //   return {
-    //     name: product.name,
-    //     shortname: product.shortname,
-    //     category: product.category,
-    //     shortCat: product.shortCat,
-    //     description: product.description,
-    //     image: product.image,
-    //   };
-    // });
+    // MAPS THE DATA THAT REMAINS
     return searchArray.map((product) => {
       return {
         name: product.name,
