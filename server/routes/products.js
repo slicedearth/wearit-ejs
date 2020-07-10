@@ -24,7 +24,7 @@ module.exports = (param) => {
       // RENDERS CATEGORY PAGE
       return res.render('products', {
         // CAPITALISES CATEGORY NAME
-        page: _.startCase(req.params.name),
+        page: _.startCase(req.params.category),
         productsList,
       });
     } catch (err) {
