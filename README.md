@@ -1,2 +1,2 @@
 # ejs-site
- 2020 Semester 1 Assessment Using EJS and ExpressJS
+Web Diploma Assessment project built with EJS and Express
